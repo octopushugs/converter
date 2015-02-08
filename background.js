@@ -7,7 +7,7 @@ chrome.commands.onCommand.addListener(function(command) { //wait for user input
 				var raw = response.data;
 				raw = parseFloat(raw);
 				if (!isNaN(raw)) { //make sure that raw is, in fact, a number before showing user anything
-					alert(raw + " kilograms is equivalent to " + raw*2.2 + " pounds.");
+					alert(raw + " kilograms is equivalent to " + (raw*2.2).toFixed(1) + " pounds.");
 				}
 				else {
 					console.log("that doesn't look like a number");
