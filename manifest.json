@@ -11,10 +11,16 @@
      "background": {
         "scripts": [ "background.js" ]
     },
+	
+	"icons": {
+		"32": "dial32.png",
+		"64": "dial64.png",
+		"128": "dial128.png"
+	},
 
     "permissions":[ "tabs", "activeTab", "webNavigation" ],
 
-    "description": "Highlight numbers and show their conversion into kilograms.",
+    "description": "Takes a user-highlighted number and shows that number converted into pounds. Very handy for browsing fitness forums.",
 
     "browser_action": {
         "default_title":"Converter"

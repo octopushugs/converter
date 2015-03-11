@@ -1,6 +1,5 @@
 chrome.extension.onMessage.addListener(function(request, sender, sendResponse) {
 	if(request.trigger == "go") {
-		console.log("trigger received");
 		if(window.getSelection() != "undefined") {
 			sendResponse({selection: window.getSelection().toString()});
 			console.log("window");
