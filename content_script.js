@@ -1,11 +1,17 @@
 chrome.extension.onMessage.addListener(function(request, sender, sendResponse) {
-  if(request.trigger == "go")
-	if(window.getSelection()) {
-		sendResponse({data: window.getSelection().toString()});
+	if(request.trigger == "go") {
+		console.log("trigger received");
+		if(window.getSelection() != "undefined") {
+			sendResponse({selection: window.getSelection().toString()});
+			console.log("window");
+		}
+		else if(typeof document.getSelection() != "undefined") {
+			sendResponse({selection: document.getSelection()});
+			console.log("document");
+		}
 	}
-	else if(typeof document.getSelection() != "undefined") {
-		sendResponse({data: document.getSelection()});
+	else {
+		sendResponse({}); //do nothing
+		console.log("did nothing");
 	}
-  else
-    sendResponse({}); //do nothing
 });
